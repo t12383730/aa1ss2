@@ -31,8 +31,11 @@ foreach ($client->parseEvents() as $event) {
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'text',
-                                'text' => $m_message
+                                'type' => 'template',
+                                'altText' => '為您推薦下列美食：',
+                                'template' => array(
+                                'type' => 'carousel',
+                                'columns' => '美食1：',
                             )
                         )
                     	));
