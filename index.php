@@ -31,9 +31,8 @@ foreach ($client->parseEvents() as $event) {
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'uri',
-                                'label' => '查看詳情',
-                                'uri' => 'http://www.google.com'
+                                'type' => 'text',
+                                'text' => '$m_message'.' 測試',
                             )
                         )
                     	));
