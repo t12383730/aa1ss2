@@ -31,11 +31,9 @@ foreach ($client->parseEvents() as $event) {
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'template',
-                                'altText' => '為您推薦下列美食：',
-                                'template' => array(
-                                'type' => 'carousel',
-                                'columns' => '美食1：',
+                                'type' => 'uri',
+                                'label' => '查看詳情',
+                                'uri' => 'http://www.google.com'
                             )
                         )
                     	));
