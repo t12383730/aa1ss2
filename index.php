@@ -30,6 +30,15 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    $client->replyMessage(array(
+                'replyToken' => $event['replyToken'],
+                'messages' => array(
+                    array(
+                        'type' => 'text',
+                        'text' => '大家好'
+                    )
+                )
+            ));
                     //require_once('includes/text.php'); // Type: Text
                     //require_once('includes/image.php'); // Type: Image
                     //require_once('includes/video.php'); // Type: Video
