@@ -30,7 +30,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                    $client->replyMessage(array(
+                     /*$client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
@@ -38,7 +38,7 @@ foreach ($client->parseEvents() as $event) {
                             'text' => $message['text'].'大家好'
                             )
                         )
-                    )); /* 回話 */
+                    )); 回話 */
                     
                     //require_once('includes/text.php'); // Type: Text
                     //require_once('includes/image.php'); // Type: Image
