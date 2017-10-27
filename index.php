@@ -130,7 +130,7 @@ foreach ($client->parseEvents() as $event) {
                         array(
                           'type' => 'text',
                           'text' => '輸入1，自我介紹'
-                       ).
+                       ),
                        array(
                           'type' => 'text',
                           'text' => '輸入2，看全項目'
