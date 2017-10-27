@@ -30,7 +30,8 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                     /*$client->replyMessage(array(
+                    if($message['text'] == '1'){
+                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
@@ -38,8 +39,8 @@ foreach ($client->parseEvents() as $event) {
                             'text' => $message['text'].'大家好'
                             )
                         )
-                    )); 回話 */
-                    
+                    )); 回話 
+                    }else{
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
@@ -120,7 +121,7 @@ foreach ($client->parseEvents() as $event) {
                         ) // message 下 array 
                     ) // message
                     )); // $clinet
-                    
+                    }
                     //require_once('includes/text.php'); // Type: Text
                     //require_once('includes/image.php'); // Type: Image
                     //require_once('includes/video.php'); // Type: Video
