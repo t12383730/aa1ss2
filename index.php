@@ -47,20 +47,53 @@ foreach ($client->parseEvents() as $event) {
                             'type' => 'template',
                             'altText' => '大家好',
                             'template' => array(
-                              'type' => 'confirm',
-                              'text' => '你確定嗎',
-                              'actions' => array(
-                                  array(
-                                      'type' => 'message',
-                                      'label' => 'Yes',
-                                      'text' => 'yes'
-                                  ),
-                                  array(
-                                      'type' => 'message',
-                                      'label' => 'No',
-                                      'text' => 'no'
-                                  )
-                              )  // 'actions' 括號  
+                              'type' => 'carousel',
+                              'columns' => array(
+                                array(
+                                    'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+                                    'title' => '這是目錄',
+                                    'text' => '選擇內容',
+                                    'actions' => array(
+                                      array(
+                                        'type' => 'postback',
+                                        'label' => 'Buy',
+                                        'data' => 'action=buy&itemid=111'
+                                      ),
+                                      array(
+                                        'type' => 'message',
+                                        'label' => '消息',
+                                        'text' => '發送消息'  
+                                      ),
+                                      array(
+                                        "type": "uri",
+                                        "label": "健康文摘",
+                                        "uri": "http://twdnews.com/"
+                                      )  
+                                    ) // 'actions 括號
+                                ), 
+                                array(
+                                   'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+                                    'title' => '這是目錄',
+                                    'text' => '選擇內容',
+                                    'actions' => array(
+                                      array(
+                                        'type' => 'postback',
+                                        'label' => 'Buy',
+                                        'data' => 'action=buy&itemid=111'
+                                      ),
+                                      array(
+                                        'type' => 'message',
+                                        'label' => '消息',
+                                        'text' => '發送消息'  
+                                      ),
+                                      array(
+                                        "type": "uri",
+                                        "label": "健康文摘",
+                                        "uri": "http://twdnews.com/"
+                                      )  
+                                    ) // 'actions 括號 
+                                )  
+                              )// 'columns' 括號
                             ) // ''template 括號
                         ) // 'messages' 下面 array 括號
                       ) //'messages' array括號
