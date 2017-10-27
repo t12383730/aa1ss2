@@ -36,7 +36,7 @@ foreach ($client->parseEvents() as $event) {
                     'messages' => array(
                         array(
                             'type' => 'text',
-                            'text' => $message['text'].'大家好'
+                            'text' => $message['text'].'，大家好，歡迎來到測試'
                             )
                         )
                     )); //回話    
@@ -128,11 +128,14 @@ foreach ($client->parseEvents() as $event) {
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
-                          'type' => 'sticker',
-                          'packageId' => '1',
-                          'stickerId' => '2',
-                       ),
-                    ),
+                          'type' => 'text',
+                          'text' => '輸入1，自我介紹'
+                       ).
+                       array(
+                          'type' => 'text',
+                          'text' => '輸入2，看全項目'
+                       ) 
+                    )
                     ));
                         
                     }
