@@ -152,7 +152,7 @@ foreach ($client->parseEvents() as $event) {
                 'messages' => array(
                     array(
                         'type' => 'text',
-                        'text' => '大家好，這是一個範例 Bot OuO 範例程式開源至 GitHub (包含教學)：'
+                        'text' => '大家好，歡迎來到測試\n輸入1是打招呼\n輸入2是全品項：'
                     )
                 )
             ));
