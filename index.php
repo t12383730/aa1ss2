@@ -40,7 +40,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         )
                     )); //回話 
-                    }else{
+                    }else if($message['text'] == '2'){
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
@@ -121,15 +121,31 @@ foreach ($client->parseEvents() as $event) {
                         ) // message 下 array 
                     ) // message
                     )); // $clinet
+                    }else{
+                      $json = file_get_contents('https://spreadsheets.google.com/feeds/list/1qBuIPjaf5fKqbJM5JkzgySnQdwWL3a1Mjvo5ldMkjNM/od6/public/values?alt=json');
+                      $data = json_decode($json, true);
+                      $result = array();
+                      
+                      foreach ($data['feed']['entry'] as $item) {
+                        $keywords = explode(',', $item['gsx$keyword']['$t']);
+                        foreach ($keywords as $keyword) {
+                            if (mb_strpos($message['text'], $keyword) !== false) {
+                                $candidate = array(
+                                    array(
+                                    'type' => 'text',
+                                    'text' => $item['gsx$title']['$t']
+                                    )
+                                );
+                                array_push($result, $candidate);
+                            }
+                        }
+                      }
+                      
+                      $client->replyMessage(array(
+                      'replyToken' => $event['replyToken'],
+                      'messages' => $result  
+                      )   
                     }
-                    //require_once('includes/text.php'); // Type: Text
-                    //require_once('includes/image.php'); // Type: Image
-                    //require_once('includes/video.php'); // Type: Video
-                    //require_once('includes/audio.php'); // Type: Audio
-                    //require_once('includes/location.php'); // Type: Location
-                    //require_once('includes/sticker.php'); // Type: Sticker
-                    //require_once('includes/imagemap.php'); // Type: Imagemap
-                    //require_once('includes/template.php'); // Type: Template
                     break;
                 default:
                     //error_log("Unsupporeted message type: " . $message['type']);
