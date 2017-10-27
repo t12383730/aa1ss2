@@ -30,7 +30,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                    /*$client->replyMessage(array(
+                    $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
@@ -38,40 +38,7 @@ foreach ($client->parseEvents() as $event) {
                             'text' => $message['text'].'大家好'
                             )
                         )
-                    ));*/ /* 回話 */
-                    
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'template', // 訊息類型 (模板)
-                                'altText' => '測試選單', // 替代文字
-                                'template' => array(
-                                    'type' => 'carousel', // 類型 (按鈕)
-                                    'thumbnailImageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example.jpg', // 圖片網址 <不一定需要>
-                                    'title' => '測試選單', // 標題 <不一定需要>
-                                    'text' => '請選擇下面類別', // 文字
-                                    'actions' => array(
-                                      array(
-                                        'type' => 'postback', // 類型 (回傳)
-                                        'label' => 'Postback example', // 標籤 1
-                                        'data' => 'action=buy&itemid=123' // 資料
-                                      ),
-                                      array(
-                                        'type' => 'message', // 類型 (訊息)
-                                        'label' => 'Message example', // 標籤 2
-                                        'text' => 'Message example' // 用戶發送文字
-                                      ),
-                                      array(
-                                        'type' => 'uri', // 類型 (連結)
-                                        'label' => 'Uri example', // 標籤 3
-                                        'uri' => 'https://twdnews.com' // 連結網址
-                                      )
-                                    )
-                                )
-                        )
-                    )
-                ));
+                    )); /* 回話 */
                     
                     //require_once('includes/text.php'); // Type: Text
                     //require_once('includes/image.php'); // Type: Image
