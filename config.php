@@ -1,6 +1,6 @@
 <?php
 return [
-    'channelAccessToken' => 'j1p3bvFuEijXmUrDHm3yqZTfi/7ZAhhFwBNL3uKbAMDUE7y2J2pakf9QsChldggWLz4WBlciG266qnemDfM3nYeRGXqaX4aOaHh5hzv7zzAHoD9TB0vVEltC6lgKf9LFFI4CmK3zvpcSpCYDImUiCQdB04t89/1O/w1cDnyilFU=', // Channel Access Token
-    'channelSecret' => '00e76b88be7c1520a8616878772ea5d6' // Channel Secret
+    'channelAccessToken' => '4EEBSLcEAwGuS/++QjfbhTNGS24GNKD0UD5Lo8+m1Ev3QBID5O0YSTo0gPGLWD8tMhg/ftvL3GOL4ME/lWDQaem36EtbkapRA2GmSmMmNR4WgGDx4KcbdFTEITKEQ0MvQZI9Osqp1coJaaTjImAVaAdB04t89/1O/w1cDnyilFU=', // Channel Access Token
+    'channelSecret' => '140c193800bf881f2ef2e6ef27a6de85' // Channel Secret
 ];
 ?>
