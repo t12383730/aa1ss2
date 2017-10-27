@@ -29,16 +29,6 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             
-            $bot = new \LINE\LINEBot(new CurlHTTPClient('j1p3bvFuEijXmUrDHm3yqZTfi/7ZAhhFwBNL3uKbAMDUE7y2J2pakf9QsChldggWLz4WBlciG266qnemDfM3nYeRGXqaX4aOaHh5hzv7zzAHoD9TB0vVEltC6lgKf9LFFI4CmK3zvpcSpCYDImUiCQdB04t89/1O/w1cDnyilFU='),
-                                     ['channelSecret' => '00e76b88be7c1520a8616878772ea5d6']);
-            $res = $bot->getProfile('user-id');
-            if ($res->isSucceeded()) {
-                $profile = $res->getJSONDecodedBody();
-                $displayName = $profile['displayName'];
-                $statusMessage = $profile['statusMessage'];
-                $pictureUrl = $profile['pictureUrl'];
-            }
-            
             switch ($message['type']) {
                 case 'text':
                     if($message['text'] == '1'){
@@ -140,7 +130,7 @@ foreach ($client->parseEvents() as $event) {
                     'messages' => array(
                         array(
                           'type' => 'text',
-                          'text' => $displayName
+                          'text' => '12346'
                        )
                     )
                     )); 
@@ -155,7 +145,7 @@ foreach ($client->parseEvents() as $event) {
         case 'postback':
             //require_once('postback.php'); // postback
             break;
-        default:
+        default: //加入好友、群組招呼語
             //error_log("Unsupporeted event type: " . $event['type']);
             $client->replyMessage(array(
                 'replyToken' => $event['replyToken'],
