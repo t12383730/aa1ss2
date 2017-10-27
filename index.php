@@ -123,17 +123,24 @@ foreach ($client->parseEvents() as $event) {
                     ) // message
                     )); // $clinet
                     }else{
-                      
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
                           'type' => 'text',
-                          'text' => '輸入1，自我介紹
-                                     輸入2，看全項目'
+                          'text' => '輸入1，自我介紹；輸入2，看全項目'
                        )
                     )
                     ));
+                        
+                    $json = file_get_contents('php://input');
+                    $file = fopen("string.txt","a+");
+                    fwrite($file,$json."\n");
+                    fclose($file);
+
+                    $json_array = json_decode($json,true);
+                    $user_mid = $json_array["result"][0]["content"]["from"];
+                    $user_message = $json_array["result"][0]["content"]["text"];    
                         
                     }
                     break;
