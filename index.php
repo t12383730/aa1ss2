@@ -40,6 +40,32 @@ foreach ($client->parseEvents() as $event) {
                         )
                     )); 回話 */
                     
+                    $client->replyMessage(array(
+                    'replyToken' => $event['replyToken'],
+                    'messages' => array(
+                        array(
+                            'type' => 'template',
+                            'altText' => '大家好',
+                            'template' => array(
+                              'type' => 'confirm',
+                              'text' => '你確定嗎',
+                              'actions' => array(
+                                  array(
+                                      'type' => 'message',
+                                      'label' => 'Yes',
+                                      'text' => 'yes'
+                                  ),
+                                  array(
+                                      'type' => 'message',
+                                      'label' => 'No',
+                                      'text' => 'no'
+                                  )
+                              )  // 'actions' 括號  
+                            ) // ''template 括號
+                        ) // 'messages' 下面 array 括號
+                      ) //'messages' array括號
+                    )); //$client雙括號 
+                    
                     //require_once('includes/text.php'); // Type: Text
                     //require_once('includes/image.php'); // Type: Image
                     //require_once('includes/video.php'); // Type: Video
