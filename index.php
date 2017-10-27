@@ -135,7 +135,7 @@ foreach ($client->parseEvents() as $event) {
                     'messages' => array(
                         array(
                           'type' => 'text',
-                          'text' => $profile['displayName'].' , '.$profile['pictureUrl'].' , '.$profile['statusMessage']
+                          'text' => $profile['displayName']
                        )
                     )
                     )); 
