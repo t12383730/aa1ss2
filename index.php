@@ -123,24 +123,22 @@ foreach ($client->parseEvents() as $event) {
                     ) // message
                     )); // $clinet
                     }else{
+                    $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('<channel access token>');
+                    $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
+                    $response = $bot->getProfile('<userId>');
+                        if ($response->isSucceeded()) {
+                            $profile = $response->getJSONDecodedBody();
+                        }                       
+                        
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
                           'type' => 'text',
-                          'text' => '輸入1，自我介紹；輸入2，看全項目'
+                          'text' => $profile['displayName'].' , '.$profile['pictureUrl'].' , '.$profile['statusMessage']
                        )
                     )
-                    ));
-                        
-                    $json = file_get_contents('php://input');
-                    $file = fopen("string.txt","a+");
-                    fwrite($file,$json."\n");
-                    fclose($file);
-
-                    $json_array = json_decode($json,true);
-                    $user_mid = $json_array["result"][0]["content"]["from"];
-                    $user_message = $json_array["result"][0]["content"]["text"];    
+                    )); 
                         
                     }
                     break;
