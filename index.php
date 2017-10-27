@@ -39,7 +39,7 @@ foreach ($client->parseEvents() as $event) {
                             'text' => $message['text'].'大家好'
                             )
                         )
-                    )); 回話 
+                    )); //回話 
                     }else{
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
