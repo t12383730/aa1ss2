@@ -129,12 +129,9 @@ foreach ($client->parseEvents() as $event) {
                     'messages' => array(
                         array(
                           'type' => 'text',
-                          'text' => '輸入1，自我介紹'
-                       ),
-                       array(
-                          'type' => 'text',
-                          'text' => '輸入2，看全項目'
-                       ) 
+                          'text' => '輸入1，自我介紹
+                                     輸入2，看全項目'
+                       )
                     )
                     ));
                         
