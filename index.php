@@ -40,6 +40,20 @@ foreach ($client->parseEvents() as $event) {
                             )
                         )
                     )); //回話 
+                    
+                    $receive = json_decode(file_get_contents("php://input"));
+	                $text = $receive->events[0]->message->text;
+	                $type = $receive->events[0]->source->type;
+                        
+	                if ($type == "room"){ $from = $receive->events[0]->source->roomId;
+	                } else if ($type == "group"){ $from = $receive->events[0]->source->groupId;
+	                } else { $from = $receive->events[0]->source->userId;
+                    }
+                        
+	                $content_type = $receive->events[0]->message->type; 
+	                $header = ["Content-Type: application/json", "Authorization: Bearer {" . $channel_access_token . "}"];
+	                reply($content_type, $text);    
+                        
                     }else if($message['text'] == '2'){
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
