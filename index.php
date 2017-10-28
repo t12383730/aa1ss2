@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 date_default_timezone_set("Asia/Taipei"); // 設定時區為台北時區
 require_once('LINEBotTiny.php');
@@ -130,7 +130,7 @@ foreach ($client->parseEvents() as $event) {
                     'messages' => array(
                         array(
                           'type' => 'text',
-                          'text' => '12346'
+                          'text' => '23456'
                        )
                     )
                     )); 
