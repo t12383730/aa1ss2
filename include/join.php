@@ -5,7 +5,9 @@ $client->replyMessage(array(
   'messages' => array(
      array(
        'type' => 'text',
-       'text' => '大家好，歡迎來到測試\n輸入1是打招呼\n輸入2是全品項：'
+       'text' => '大家好，歡迎來到測試
+輸入1:打招呼
+輸入2:全品項'
      )
    )
 ));
