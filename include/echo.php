@@ -3,8 +3,8 @@
         'replyToken' => $event['replyToken'],
         'messages' => array(
             array(
-                'type' => 'text', // °T®§Ãþ«¬ (¤å¦r)
-                'text' => 'Åwªï¨Ó¨ì´ú¸Õ¡A¿é¤J1:Åwªï°T®§¡A¿é¤J2:¥þ³¡¤º®e' // ¦^´_°T®§
+                'type' => 'text', // è¨Šæ¯é¡žåž‹ (æ–‡å­—)
+                'text' => 'æ­¡è¿Žä¾†åˆ°æ¸¬è©¦' // å›žå¾©è¨Šæ¯
             )
         )
     ));
