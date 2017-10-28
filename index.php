@@ -32,16 +32,7 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                     if($message['text'] == '1'){
-                     $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',
-                            'text' => $message['text'].'，大家好，歡迎來到測試'
-                            )
-                        )
-                    )); //回話    
-                        
+                      require_once('include/echo.php');
                     }else if($message['text'] == '2'){
                     $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
