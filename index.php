@@ -32,7 +32,7 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                     if($message['text'] == '2'){ require_once('include/product_template.php');
-                    }else{ require_once('include/echo.php'); 
+                    }else{ require_once('include/welcome.php'); 
                     }
                     break;
                 default:
@@ -44,7 +44,7 @@ foreach ($client->parseEvents() as $event) {
             //require_once('postback.php'); // postback
             break;
         default: //加入好友、群組招呼語
-            require_once('include/echo.php');
+            require_once('include/welcome.php');
             break;
     }
 };
