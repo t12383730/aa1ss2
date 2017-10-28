@@ -21,6 +21,7 @@
                                 array(
                                     'type' => 'message', // 類型 (訊息)
                                     'label' => '訊息回傳', // 標籤 2
+                                    'text' => '訊息回傳' // 用戶發送文字
                                 ),
                                 array(
                                     'type' => 'uri', // 類型 (連結)
