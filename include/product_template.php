@@ -26,7 +26,7 @@
                                 array(
                                     'type' => 'uri', // 類型 (連結)
                                     'label' => '查看更多', // 標籤 3
-                                    'uri' => 'https://github.com/t12383730/aa1ss2/blob/master/index.php' // 連結網址
+                                    'uri' => 'https://homao.000webhostapp.com/' // 連結網址
                                 )
                             )
                         ),
