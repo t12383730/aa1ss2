@@ -1,4 +1,5 @@
 <?php
+
 $client->replyMessage(array(
     'replyToken' => $event['replyToken'],
     'messages' => array(
@@ -8,4 +9,5 @@ $client->replyMessage(array(
         )
     )
 )); //¦^¸Ü
+
 ?>
