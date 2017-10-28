@@ -40,6 +40,19 @@ foreach ($client->parseEvents() as $event) {
                     break;
             }
             break;
+        case 'follow':
+            $response = $bot->getProfile($event['source']['userId']);
+			if ($response->isSucceeded()) {
+					$profile = $response->getJSONDecodedBody();
+			}
+			$name=$profile['displayName'];
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Hello $name, thanks for adding me as a friend.\r\nYou can tell me your problem or question and I'll answer if I can.");
+			$sticker= new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder('2','157');
+			$user=$event['source']['userId'];
+			$result = $bot->pushMessage($user,$textMessageBuilder);
+			$result = $bot->pushMessage($user,$sticker);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+            break;
         case 'postback':
             //require_once('postback.php'); // postback
             break;
