@@ -26,7 +26,7 @@
                                 array(
                                     'type' => 'uri', // 類型 (連結)
                                     'label' => '查看更多', // 標籤 3
-                                    'uri' => 'https://homao.000webhostapp.com/' // 連結網址
+                                    'uri' => 'https://vinegar.000webhostapp.com/' // 連結網址
                                 )
                             )
                         ),
