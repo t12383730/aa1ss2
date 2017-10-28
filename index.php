@@ -31,20 +31,8 @@ foreach ($client->parseEvents() as $event) {
             
             switch ($message['type']) {
                 case 'text':
-                    if($message['text'] == '1'){ require_once('include/echo.php');
-                    }else if($message['text'] == '2'){ require_once('include/product_template.php');
-                    }else{
-                        
-                    $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                          'type' => 'text',
-                          'text' => '23456'
-                       )
-                    )
-                    )); 
-                        
+                    if($message['text'] == '2'){ require_once('include/product_template.php');
+                    }else{ require_once('include/echo.php'); 
                     }
                     break;
                 default:
@@ -56,16 +44,7 @@ foreach ($client->parseEvents() as $event) {
             //require_once('postback.php'); // postback
             break;
         default: //加入好友、群組招呼語
-            //error_log("Unsupporeted event type: " . $event['type']);
-            $client->replyMessage(array(
-                'replyToken' => $event['replyToken'],
-                'messages' => array(
-                    array(
-                        'type' => 'text',
-                        'text' => '大家好，歡迎來到測試\n輸入1是打招呼\n輸入2是全品項：'
-                    )
-                )
-            ));
+            require_once('include/echo.php');
             break;
     }
 };
