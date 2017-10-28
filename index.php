@@ -44,15 +44,7 @@ foreach ($client->parseEvents() as $event) {
             //require_once('postback.php'); // postback
             break;
         default: //加入好友、群組招呼語
-            $client->replyMessage(array(
-                'replyToken' => $event['replyToken'],
-                'messages' => array(
-                    array(
-                        'type' => 'text',
-                        'text' => '大家好，歡迎來到測試\n輸入1是打招呼\n輸入2是全品項：'
-                    )
-                )
-            ));
+            require_once('include/join.php'); 
             break;
     }
 };
