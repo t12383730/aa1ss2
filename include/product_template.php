@@ -9,7 +9,7 @@
                     'type' => 'carousel', // 類型 (旋轉木馬)
                     'columns' => array(
                         array(
-                            'thumbnailImageUrl' => 'http://twdnews.com/image/banner/%E7%9B%8A%E6%AF%8D%E8%8D%89%E7%B4%A0.jpg', // 圖片網址 <不一定需要>
+                            'thumbnailImageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example.jpg', // 圖片網址 <不一定需要>
                             'title' => '益母草素', // 標題 1 <不一定需要>
                             'text' => '九龍齋益母草素', // 文字 1
                             'actions' => array(
@@ -26,12 +26,12 @@
                                 array(
                                     'type' => 'uri', // 類型 (連結)
                                     'label' => '查看更多', // 標籤 3
-                                    'uri' => 'http://www.google.com' // 連結網址
+                                    'uri' => 'https://github.com/t12383730/aa1ss2/blob/master/index.php' // 連結網址
                                 )
                             )
                         ),
                         array(
-                            'thumbnailImageUrl' => 'http://twdnews.com/image/banner/%E9%BB%91%E8%9C%9C%E6%A3%97.jpg', // 圖片網址 <不一定需要>
+                            'thumbnailImageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example.jpg', // 圖片網址 <不一定需要>
                             'title' => '加州黑蜜棗', // 標題 2 <不一定需要>
                             'text' => '九龍齋加州黑蜜棗', // 文字 2
                             'actions' => array(
@@ -48,7 +48,7 @@
                                 array(
                                     'type' => 'uri', // 類型 (連結)
                                     'label' => '查看更多', // 標籤 3
-                                    'uri' => 'http://tw.yahoo.com' // 連結網址
+                                    'uri' => 'https://github.com/t12383730/aa1ss2/blob/master/index.php' // 連結網址
                                 )
                             )
                         )
