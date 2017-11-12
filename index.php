@@ -32,6 +32,7 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                     if($message['text'] == '2'){ require_once('include/product_template.php');
+                    }else if($message['text'] == '3'){ require_once('include/mid.php');
                     }else{ require_once('include/welcome.php'); 
                     }
                     break;
