@@ -10,7 +10,7 @@ if ($response->isSucceeded()) {
     $statusMessage $profile['statusMessage'];
 }*/
 
-$$displayName='123';
+$displayName='123';
 
 $client->replyMessage(array(
   'replyToken' => $event['replyToken'],
