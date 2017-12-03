@@ -23,6 +23,25 @@ return [
     error_log("config.php 設定檔建立成功，請編輯檔案輸入驗證權杖和粉絲專頁存取權杖！", 0); // 輸出錯誤
 }
 
+$googledataspi = "https://spreadsheets.google.com/feeds/list/1acQdkyKOS-L_Jsp__flWZ69tzUh6aKDBYKc50pq16No/od6/public/values?alt=json";
+
+// 將Google表單轉成JSON資料
+$json = file_get_contents($googledataspi);
+$data = json_decode($json, true);           
+$store_text=''; 
+// 資料起始從feed.entry          
+foreach ($data['feed']['entry'] as $item) {
+  // 將keywords欄位依,切成陣列
+  $keywords = explode(',', $item['gsx$keywords']['$t']);
+  
+  // 以關鍵字比對文字內容，符合的話將店名/地址寫入
+  foreach ($keywords as $keyword) {
+    if (mb_strpos($message['text'], $keyword) !== false) {                      
+      $store_text = $item['gsx$storename']['$t']." 地址是:".$item['gsx$storeaddress']['$t'];                 
+    }
+  }
+}       
+
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
@@ -31,13 +50,26 @@ foreach ($client->parseEvents() as $event) {
             
             switch ($message['type']) {
                 case 'text':
-                    if($message['text'] == '2'){
+                    /*if($message['text'] == '2'){
                         require_once('include/product_template.php');
                     }else if($message['text'] == '3'){
                         require_once('include/mid.php');
                     }else{
-                        require_once('include/welcome.php'); 
-                    }
+                        require_once('include/echo.php'); 
+                    }*/
+                    $client->replyMessage(array(
+                      'replyToken' => $event['replyToken'],
+                      'messages' => array(
+                        array(
+                            'type' => 'text',
+                            'text' => '你想要找'.$message['text'].' 讓我想想喔…',
+                        ),
+                        array(
+                            'type' => 'text',
+                            'text' => '介紹你 '.$store_text.' 不錯喔',
+                        )
+                      ),
+                    ));      
                     break;
                 default:
                     require_once('include/welcome.php'); 
