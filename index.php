@@ -72,7 +72,7 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
+        /*$json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
         $store_text=''; 
         // 資料起始從feed.entry          
@@ -86,7 +86,7 @@ switch ($event['type']) {
                     $store_text = $item['gsx$storename']['$t']." 地址是:".$item['gsx$storeaddress']['$t'];                 
               }
             }
-        }       
+        }*/       
         
         switch ($message['type']) {
             case 'text':
