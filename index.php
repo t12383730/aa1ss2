@@ -36,7 +36,15 @@ foreach ($client->parseEvents() as $event) {
                     }else if($message['text'] == '3'){
                         require_once('include/mid.php');
                     }else{
-                        require_once('include/echo.php'); 
+                        $client->replyMessage(array(
+                          'replyToken' => $event['replyToken'],
+                          'messages' => array(
+                            array(
+                            'type' => 'text',
+                            'text' => $message
+                            )
+                          )
+                        )); 
                     }      
                     break;
                 default:
@@ -53,10 +61,4 @@ foreach ($client->parseEvents() as $event) {
     }
 };
 
-$myfile = fopen("try.txt", "w") or die("Unable to open file!");
-$txt = "Mickey Mouse\n";
-fwrite($myfile, $txt);
-$txt = "Minnie Mouse\n";
-fwrite($myfile, $txt);
-fclose($myfile);
 ?>
