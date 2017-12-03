@@ -5,7 +5,7 @@ $client->replyMessage(array(
   'messages' => array(
      array(
        'type' => 'text',
-       'text' => $$message
+       'text' => $message
      )
    )
 ));
