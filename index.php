@@ -36,7 +36,7 @@ foreach ($client->parseEvents() as $event) {
                     }else if($message['text'] == '3'){
                         require_once('include/mid.php');
                     }else{
-                        require_once('include/echo.php');
+                        require_once('include/help.php');
                     }      
                     break;
                 default:
