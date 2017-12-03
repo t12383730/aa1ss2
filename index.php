@@ -36,15 +36,7 @@ foreach ($client->parseEvents() as $event) {
                     }else if($message['text'] == '3'){
                         require_once('include/mid.php');
                     }else{
-                        $client->replyMessage(array(
-                          'replyToken' => $event['replyToken'],
-                          'messages' => array(
-                            array(
-                            'type' => 'text',
-                            'text' => $message['text']
-                            )
-                          )
-                        )); 
+                        require_once('include/echo.php');
                     }      
                     break;
                 default:
